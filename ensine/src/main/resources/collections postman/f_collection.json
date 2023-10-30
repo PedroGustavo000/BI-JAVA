@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "8f72aba7-cf3b-400d-81a9-a6ec49d3ecfc",
+		"name": "Ensine-me",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23004419"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Senhor fera\",\r\n    \"email\": \"mrbeast1@email.com\",\r\n    \"senha\": \"senha1234\",\r\n    \"dataNasc\": \"2003-08-25\",\r\n    \"materias\": [{\r\n        \"nome\": \"matematica\"\r\n    },\r\n    {\r\n        \"nome\":\"fisica\"\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mrbeast1@email.com\",\r\n    \"senha\":\"senha1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar aula",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"professor\": {\r\n        \"id\": 4\r\n    },\r\n    \"titulo\": \"Algebra para leigos\",\r\n    \"descricao\" : \"minha mãe é muito legal\",\r\n    \"materia\": {\r\n        \"nome\":\"matematica\"\r\n    },\r\n    \"dataHora\": \"2023-06-10T17:09:42.411\",\r\n    \"qtdAlunos\": 5,\r\n    \"alunos\": [{\r\n        \"id\": 2\r\n    }],\r\n    \"status\": \"SOLICITADO\",\r\n    \"duracaoSegundos\" : \"1800\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/aulas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar aula concluída",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"professor\": {\r\n        \"id\": 4\r\n    },\r\n    \"titulo\": \"Algebra para medianos\",\r\n    \"descricao\" : \"minha mãe é topissima\",\r\n    \"materia\": {\r\n        \"nome\":\"matematica\"\r\n    },\r\n    \"dataHora\": \"2023-06-10T17:09:42.411\",\r\n    \"qtdAlunos\": 5,\r\n    \"alunos\": [{\r\n        \"id\": 2\r\n    }],\r\n    \"status\": \"CONCLUIDA\",\r\n    \"duracaoSegundos\" : \"1800\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/aulas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Professor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Hugo hanashiro\",\r\n    \"email\": \"hugo@email.com\",\r\n    \"senha\": \"senha1234\",\r\n    \"dataNasc\": \"2003-08-25\",\r\n    \"materias\": [{\r\n        \"nome\": \"matematica\"\r\n    }],\r\n    \"descricao\":\"amo matematica demais ><\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/professor/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar aula",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NzAwNDYsImV4cCI6MTY4ODU3MDA0Nn0.Db-sUPG_Z-pYUJIpS8VympO5_jbLuVGMahudcf1IK2BGt8oMnDX5ZWb7xkaWHA7zFQkUD-XknpHyQOjPs7LtoA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/aulas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar formação no professor",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dtInicio\" : \"2023-05-29T12:34:56\",\r\n    \"dtTermino\" : \"2023-12-29T12:34:56\",\r\n    \"instituicao\" : \"usp\",\r\n    \"nomeCurso\" : \"educação física\",\r\n    \"tipoFormacao\" : \"LICENCIATURA\",\r\n    \"professorUsuarioId\" : \"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/professor/4/formacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"4",
+						"formacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar disponibilidade no professor",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"diaDaSemana\" : \"SABADO\",\r\n    \"horarioInicio\" : \"00:00:00.000\",\r\n    \"horarioFim\" : \"23:59:59.999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/professor/4/disponibilidade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"4",
+						"disponibilidade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar formações",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/usuarios/professor/4/formacoes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"4",
+						"formacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar disponibilidades",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/usuarios/professor/4/disponibilidades",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"4",
+						"disponibilidades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contar aulas por matéria",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NzAwNDYsImV4cCI6MTY4ODU3MDA0Nn0.Db-sUPG_Z-pYUJIpS8VympO5_jbLuVGMahudcf1IK2BGt8oMnDX5ZWb7xkaWHA7zFQkUD-XknpHyQOjPs7LtoA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/aulas/teste/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas",
+						"teste",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar aula por descricao",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aulas/busca-por-descricao?termo=mae",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas",
+						"busca-por-descricao"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "mae"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar aula por titulo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/aulas/busca-por-titulo?termo=leigo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas",
+						"busca-por-titulo"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "leigo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar aula por matéria",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/aulas/busca-por-materia?termo=matematica",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aulas",
+						"busca-por-materia"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "matematica"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar professor por nome",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/professor/busca-por-nome?termo=hugo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"busca-por-nome"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "hugo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar professores por descrição",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/professor/busca-por-descricao?termo=penis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"busca-por-descricao"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "penis"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar professores por matéria",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/professor/busca-por-materia?termo=Matemática",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"professor",
+						"busca-por-materia"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "Matemática"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar avaliacao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ5NjkxOTksImV4cCI6MTY4ODU2OTE5OX0.Ul08OXsWQ5QoH7lWvHXLmaeVvj4U-5u-1PP0oMfkj7Lygb5Qzx2TO841sPcjBknWyLN_q9Clgl9Mi1Xw0Vt-Dw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nota\" : 5.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/avaliacoes/2/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"avaliacoes",
+						"2",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar professores recomendados",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcmJlYXN0MUBlbWFpbC5jb20iLCJpYXQiOjE2ODU5Mjg4ODQsImV4cCI6MTY4OTUyODg4NH0.xmklrWIDYQvF0-o2cxciXz0-nwCGpRaHH7QhOKFosA-jO9f86DYpw1Sf4CDmEzyotROqyuftHKih-8dz3iI-BA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/6/professores-recomendados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"6",
+						"professores-recomendados",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

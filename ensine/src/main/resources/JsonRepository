@@ -1,0 +1,33 @@
+CADASTRAR USUARIO
+{
+    "nome": "nomeTeste",
+    "email": "emailTeste@email.com",
+    "senha": "senhateste",
+    "dataNasc": "2003-08-25",
+    "materias": [{
+        "nome": "matematica"
+    }]
+}
+
+LOGIN USUARIO
+{
+    "email": "emailTeste@email.com",
+    "senha": "senhateste"
+}
+
+CADASTRAR AULA
+{
+    "professor": {
+        "id": 1
+    },
+    "titulo": "tituloTeste",
+    "materia": {
+        "id": 1
+    },
+    "dataHora": "2023-06-10T17:09:42.411",
+    "qtdAlunos": 5,
+    "alunos": [{
+        "id": 1
+    }],
+    "status": "Programada"
+}
